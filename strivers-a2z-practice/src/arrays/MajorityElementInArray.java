@@ -1,27 +1,23 @@
 package arrays;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 public class MajorityElementInArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		System.out.print(majorityElement(new int[] {-53,75,56,56,56}));
 	}
 	public static int majorityElement(int[] v)
 	{
-        int n=v.length/2;
-        Map<Integer,Integer> hm=new  HashMap<Integer,Integer>();
-        for(int i=0;i<v.length;i++)
-        {
-           if(hm.containsKey(v[i]) )
-           {
-        	   hm.put(v[i], hm.get(v[i])+1);
-           }
-           else {
-        	   hm.put(v[i], 1);
-           }
-        }
-      //  hm.entrySet().stream().filter();
-        return 0;
+		int[] nv=new int[v.length];
+		for(int i=0;i<v.length;i++)
+		{
+			int count=nv[i]+1;
+			
+		}
+		return 0;
 	}
 }
