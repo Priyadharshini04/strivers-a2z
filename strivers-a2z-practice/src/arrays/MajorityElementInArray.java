@@ -8,15 +8,27 @@ public class MajorityElementInArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.print(majorityElement(new int[] {-53,75,56,56,56}));
+		System.out.print(majorityElement(new int[] {6,5,5}));
 	}
 	public static int majorityElement(int[] v)
 	{
-		int[] nv=new int[v.length];
+		Map<Integer,Integer> mp=new LinkedHashMap<Integer, Integer>();
 		for(int i=0;i<v.length;i++)
 		{
-			int count=nv[i]+1;
-			
+			if(mp.containsKey(v[i]))
+			{
+				mp.put(v[i], mp.get(v[i])+1);
+			}
+			else {
+				mp.put(v[i], 1);
+			}
+		}
+		for(Map.Entry<Integer, Integer> entry:mp.entrySet())
+		{
+			if(entry.getValue()>(v.length/2))
+			{
+				return entry.getKey();
+			}
 		}
 		return 0;
 	}
